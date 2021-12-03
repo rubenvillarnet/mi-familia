@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.images-grid {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  div {
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.3s;
+  }
+  @media screen and (orientation: portrait) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+.inactive {
+  filter: grayscale(100%);
+}
+
+.selected {
+  transform: scale(1.2);
+  position: relative;
+  z-index: 999;
+}
