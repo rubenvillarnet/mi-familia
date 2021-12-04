@@ -8,6 +8,12 @@ const items = [
 ]
 
 const shuffledItems = items.sort((a, b) => 0.5 - Math.random());
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 
 const imageElements = document.querySelectorAll('.image');
 imageElements.forEach((img, idx) => {
