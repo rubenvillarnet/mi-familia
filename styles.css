@@ -20,6 +20,7 @@
 .images-grid div {
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
