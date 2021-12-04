@@ -1,0 +1,15 @@
+{
+  "name": "Mi Familia",
+  "short_name": "MiFamilia",
+  "theme_color": "#3F5F6E",
+  "background_color": "#3f5f6e",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icons/icon-512x512.png",
+      "type": "image/png", "sizes": "512x512"
+    }
+  ]
+}
