@@ -7,7 +7,7 @@ const items = [
   { file: "mari", name: "Mari" },
 ];
 let isSelected = false;
-
+const isPWA = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
 const shuffledItems = items.sort((a, b) => 0.5 - Math.random());
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -44,7 +44,9 @@ imageElements.forEach((img, idx) => {
   const { file } = shuffledItems[idx];
   img.style.backgroundImage = `url('./img/${file}.png')`;
   img.addEventListener("click", () => onImageSelected(idx, file));
-  img.addEventListener("touchstart", () => onImageSelected(idx, file));
+  if(isPWA) {
+    img.addEventListener("touchstart", () => onImageSelected(idx, file));
+  }
 });
 
 if ("serviceWorker" in navigator) {
