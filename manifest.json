@@ -3,7 +3,7 @@
   "short_name": "MiFamilia",
   "theme_color": "#3F5F6E",
   "background_color": "#3f5f6e",
-  "display": "fullscreen",
+  "display": "standalone",
   "scope": ".",
   "start_url": ".",
   "icons": [
