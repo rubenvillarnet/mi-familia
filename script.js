@@ -7,7 +7,16 @@ const items = [
   { file: "mari", name: "Mari" },
 ];
 let isSelected = false;
-const isPWA = window.matchMedia('(display-mode: fullscreen)').matches || navigator.fullscreen;
+function isInstalled() {
+  // For iOS
+  if(window.navigator.standalone) return true
+
+  // For Android
+  if(window.matchMedia('(display-mode: standalone)').matches) return true
+
+  // If neither is true, it's not installed
+  return false
+}
 const shuffledItems = items.sort((a, b) => 0.5 - Math.random());
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -44,7 +53,7 @@ imageElements.forEach((img, idx) => {
   const { file } = shuffledItems[idx];
   img.style.backgroundImage = `url('./img/${file}.png')`;
   img.addEventListener("click", () => onImageSelected(idx, file));
-  if(isPWA) {
+  if(isInstalled()) {
     img.addEventListener("touchstart", () => onImageSelected(idx, file));
   }
 });
